@@ -3,6 +3,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.jolbox.bonecp.BoneCPDataSource;
 
 // ========================================================================
@@ -25,6 +28,9 @@ public class ClassUsingMySQL
 {
     public ClassUsingMySQL()
     {
+        ApplicationContext context =
+            new ClassPathXmlApplicationContext(new String[] {"spring.xml"});
+
         Connection connection = null;
         try
         {
